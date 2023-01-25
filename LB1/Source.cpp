@@ -34,7 +34,7 @@ BOOL CALLBACK DlgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 			CHAR sz_buffer[SIZE] = {};
 			CHAR sz_output_buffer[SIZE] = {};
 			HWND hCombo = GetDlgItem(hwnd, IDC_LIST1);
-			int i = SendMessage(hCombo, LB_GETCURSEL, 0, 0);//Получаем номер выделенного элемента ComboBox
+			int i = SendMessage(hCombo, LB_GETCURSEL, 0, 0);
 			SendMessage(hCombo, LB_GETTEXT, i, (LPARAM)sz_buffer);
 			sprintf(sz_output_buffer, "Вы выбрали строку номер %i со значением \"%s\".", i, sz_buffer);
 			MessageBox(hwnd, (LPCSTR)sz_output_buffer, (LPCSTR)"Selecterd item", MB_OK | MB_ICONINFORMATION);
